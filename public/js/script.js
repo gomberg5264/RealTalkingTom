@@ -12,8 +12,9 @@ recognition.lang = 'en-US';
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
-document.querySelector('button').addEventListener('click', () => {
+document.querySelector('#BtnTomtalk').addEventListener('click', () => {
   recognition.start();
+  document.querySelector('#rollover').className='listen';
 });
 
 recognition.addEventListener('speechstart', () => {
@@ -44,12 +45,22 @@ function synthVoice(text) {
   const synth = window.speechSynthesis;
   const utterance = new SpeechSynthesisUtterance();
   utterance.text = text;
-  synth.speak(utterance);
+  synth.speak(utterance); 
 }
 
 socket.on('bot reply', function(replyText) {
-  synthVoice(replyText);
+
+  new Promise((resolve, reject) => {
+      synthVoice(replyText);
+    setTimeout(() => {resolve() }, 3000);       
+  })
+  .then(() => {
+    document.querySelector('#rollover').className='normal';
+  })
 
   if(replyText == '') replyText = '(No answer...)';
   outputBot.textContent = replyText;
+
+  document.querySelector('#rollover').className='talk';
+
 });

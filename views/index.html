@@ -15,15 +15,22 @@
 
   <body>
     <section>
-      <h1>Simple AI Bot</h1>
-      <h2>with Web Speech API</h2>
+      <h1>Multi Lingual AI Bot</h1>
 
-      <button><i class="fa fa-microphone"></i></button>
+      <div id="rollover" class="normal">
+          <img id="imgtalk" src="images/Tom.jpg"  alt="Tom Talking">        
+          <img id="imglisten" src="images/tom_listening.jpg"    class="listen" alt="Tom Listening">
+          <img id="imgtalk" src="images/tom_talking.gif"  class="talk" alt="Tom Talking">          
+          <button id="BtnTomtalk"><i class="fa fa-microphone"></i></button>
 
-      <div>
-          <p>You said: <em class="output-you">...</em></p>
-          <p>Bot replied: <em class="output-bot">...</em></p>
-      </div>
+          <div class="op">
+            <p>You said: <em class="output-you">...</em></p>
+            <p>Tom replied: <em class="output-bot">...</em></p>
+          </div>
+
+      </div>  
+
+
     </section>
 
     <script src="/socket.io/socket.io.js"></script>

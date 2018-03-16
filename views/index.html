@@ -7,7 +7,7 @@
     <meta name="description" content="Simple AI Chat Bot Demo with Web Speech API">
     <meta name="author" content="Tomomi Imura  @girlie_mac">
 
-    <title>Simple AI Demo with Web Speech API</title>
+    <title>The Real Talking Tom</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -17,11 +17,15 @@
     <section>
       <h1>Multi Lingual AI Bot</h1>
 
+        <p>
+            <label for="select_dialect">Select Tom's Language</label><select id="select_dialect"></select>
+        </p>
+
       <div id="rollover" class="normal">
-          <img id="imgtalk" src="images/Tom.jpg"  alt="Tom Talking">        
+          <img id="imgtalk" src="images/Tom.jpg"  alt="Real Talking Tom" usemap="#image-map">        
           <img id="imglisten" src="images/tom_listening.jpg"    class="listen" alt="Tom Listening">
           <img id="imgtalk" src="images/tom_talking.gif"  class="talk" alt="Tom Talking">          
-          <button id="BtnTomtalk"><i class="fa fa-microphone"></i></button>
+          <!-- <button id="BtnTomtalk"><i class="fa fa-microphone"></i></button> -->
 
           <div class="op">
             <p>You said: <em class="output-you">...</em></p>
@@ -32,6 +36,11 @@
 
 
     </section>
+
+  <map name="image-map">
+      <area class="head" alt="head" title="head" href="#" coords="52,25,293,192" shape="rect">
+      <area target="" alt="" title="" href="" coords="" shape="0">
+  </map>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="js/script.js"></script>

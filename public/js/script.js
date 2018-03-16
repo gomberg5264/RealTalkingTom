@@ -13,7 +13,7 @@
   let defaultLang= "";
   let needTranslation = false;
 
-  const langs =[{"hi":"Hindi"}, {"te":"Telugu"},{"ml":"Malayalam"},{"ta":"Tamil"},{"ar":"Arabic"},{"az":"Azerbaijan"},{"sq":"Albanian"},{"am":"Amharic"},{"en":"English"},{"hy":"Armenian"},{"af":"Afrikaans"},{"eu":"Basque"},{"ba":"Bashkir"},{"be":"Belarusian"},{"bn":"Bengali"},{"my":"Burmese"},{"bg":"Bulgarian"},{"bs":"Bosnian"},{"cy":"Welsh"},{"hu":"Hungarian"},{"vi":"Vietnamese"},{"(Creole)":"Haitian"},{"gl":"Galician"},{"nl":"Dutch"},{"Mari":"Hill"},{"el":"Greek"},{"ka":"Georgian"},{"gu":"Gujarati"},{"da":"Danish"},{"he":"Hebrew"},{"yi":"Yiddish"},{"id":"Indonesian"},{"ga":"Irish"},{"it":"Italian"},{"is":"Icelandic"},{"es":"Spanish"},{"kk":"Kazakh"},{"kn":"Kannada"},{"ca":"Catalan"},{"ky":"Kyrgyz"},{"zh":"Chinese"},{"ko":"Korean"},{"xh":"Xhosa"},{"km":"Khmer"},{"lo":"Laotian"},{"la":"Latin"},{"lv":"Latvian"},{"lt":"Lithuanian"},{"lb":"Luxembourgish"},{"mg":"Malagasy"},{"ms":"Malay"},{"mt":"Maltese"},{"mk":"Macedonian"},{"mi":"Maori"},{"mr":"Marathi"},{"mhr":"Mari"},{"sk":"Slovakian"},{"mn":"Mongolian"},{"de":"German"},{"ne":"Nepali"},{"no":"Norwegian"},{"pa":"Punjabi"},{"pap":"Papiamento"},{"fa":"Persian"},{"pl":"Polish"},{"pt":"Portuguese"},{"ro":"Romanian"},{"ru":"Russian"},{"ceb":"Cebuano"},{"sr":"Serbian"},{"si":"Sinhala"},{"sl":"Slovenian"},{"sw":"Swahili"},{"su":"Sundanese"},{"tg":"Tajik"},{"th":"Thai"},{"tl":"Tagalog"},{"tt":"Tatar"},{"tr":"Turkish"},{"udm":"Udmurt"},{"uz":"Uzbek"},{"uk":"Ukrainian"},{"ur":"Urdu"},{"fi":"Finnish"},{"fr":"French"},{"hr":"Croatian"},{"cs":"Czech"},{"sv":"Swedish"},{"gd":"Scottish"},{"et":"Estonian"},{"eo":"Esperanto"},{"jv":"Javanese"},{"ja":"Japanese"}];
+  const langs =[{"hi":"Hindi"}, {"te":"Telugu"},{"ml":"Malayalam"},{"ta":"Tamil"},{"ar":"Arabic"},{"th":"Thai"},{"az":"Azerbaijan"},{"sq":"Albanian"},{"am":"Amharic"},{"en":"English"},{"hy":"Armenian"},{"af":"Afrikaans"},{"eu":"Basque"},{"ba":"Bashkir"},{"be":"Belarusian"},{"bn":"Bengali"},{"my":"Burmese"},{"bg":"Bulgarian"},{"bs":"Bosnian"},{"cy":"Welsh"},{"hu":"Hungarian"},{"vi":"Vietnamese"},{"(Creole)":"Haitian"},{"gl":"Galician"},{"nl":"Dutch"},{"Mari":"Hill"},{"el":"Greek"},{"ka":"Georgian"},{"gu":"Gujarati"},{"da":"Danish"},{"he":"Hebrew"},{"yi":"Yiddish"},{"id":"Indonesian"},{"ga":"Irish"},{"it":"Italian"},{"is":"Icelandic"},{"es":"Spanish"},{"kk":"Kazakh"},{"kn":"Kannada"},{"ca":"Catalan"},{"ky":"Kyrgyz"},{"zh":"Chinese"},{"ko":"Korean"},{"xh":"Xhosa"},{"km":"Khmer"},{"lo":"Laotian"},{"la":"Latin"},{"lv":"Latvian"},{"lt":"Lithuanian"},{"lb":"Luxembourgish"},{"mg":"Malagasy"},{"ms":"Malay"},{"mt":"Maltese"},{"mk":"Macedonian"},{"mi":"Maori"},{"mr":"Marathi"},{"mhr":"Mari"},{"sk":"Slovakian"},{"mn":"Mongolian"},{"de":"German"},{"ne":"Nepali"},{"no":"Norwegian"},{"pa":"Punjabi"},{"pap":"Papiamento"},{"fa":"Persian"},{"pl":"Polish"},{"pt":"Portuguese"},{"ro":"Romanian"},{"ru":"Russian"},{"ceb":"Cebuano"},{"sr":"Serbian"},{"si":"Sinhala"},{"sl":"Slovenian"},{"sw":"Swahili"},{"su":"Sundanese"},{"tg":"Tajik"},{"tl":"Tagalog"},{"tt":"Tatar"},{"tr":"Turkish"},{"udm":"Udmurt"},{"uz":"Uzbek"},{"uk":"Ukrainian"},{"ur":"Urdu"},{"fi":"Finnish"},{"fr":"French"},{"hr":"Croatian"},{"cs":"Czech"},{"sv":"Swedish"},{"gd":"Scottish"},{"et":"Estonian"},{"eo":"Esperanto"},{"jv":"Javanese"},{"ja":"Japanese"}];
 
   let voices = [];
   let filteredvoices=[];
@@ -67,8 +67,12 @@
   }
 
   recognition.lang = defaultLang || 'en-US';
+
   recognition.interimResults = false;
   recognition.maxAlternatives = 1;
+  
+  // recognition.continuous = true;
+  // recognition.interimResults = true;
 
   // defaultLang.split('-')[0] !==
 
@@ -82,7 +86,7 @@
         })
         .then(function(result) {
           // console.log('inside', result.text)
-          console.log(srcLang, destLang, sourceText, result.text);          
+          // console.log(srcLang, destLang, sourceText, result.text);          
           resolve(result.text);
         });             
     });  

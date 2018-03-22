@@ -8,10 +8,14 @@ View the demo on [Vimeo](https://vimeo.com/261249587/)
 
 
 ### How to run on you local host 
-Have checked in the env locally, so its just cloning installing and running index.js
+Have checked in the env locally, so just clone, install and run index.js
 
 ```
-
+$ git clone https://github.com/mpnkhan/web-speech-ai.git
+$ cd web-speech-ai
+$ npm install 
+$ node index.js
+On your chrome browser http://localhost:3000/
 ```
 
 

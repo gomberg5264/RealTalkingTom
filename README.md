@@ -18,8 +18,8 @@ Use a better translation service like Microsoft or Google, instead of Yandex.
 Have checked in the env locally, so just clone, install and run index.js
 
 ```
-$ git clone https://github.com/mpnkhan/web-speech-ai.git
-$ cd web-speech-ai
+$ git clone https://github.com/mpnkhan/RealTalkingTom.git
+$ cd RealTalkingTom
 $ npm install 
 $ node index.js
 On your chrome browser http://localhost:3000/
